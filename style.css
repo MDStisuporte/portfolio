@@ -1,6 +1,6 @@
-/* ==============================
-   RESET E BASE
-============================== */
+/* ==================================================
+   RESET E VARIÁVEIS
+================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -21,32 +21,32 @@
   --border-soft: #1f2937;
 }
 
-/* ==============================
-   BODY
-============================== */
+/* ==================================================
+   BASE
+================================================== */
 body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.7;
 }
 
-/* ==============================
+/* ==================================================
    LINKS
-============================== */
+================================================== */
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 a:hover {
   color: var(--accent-hover);
 }
 
-/* ==============================
+/* ==================================================
    HEADER
-============================== */
+================================================== */
 header {
   text-align: center;
   padding: 3.5rem 1rem;
@@ -55,83 +55,108 @@ header {
 }
 
 header h1 {
-  font-size: 2.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
 }
 
 header p {
-  color: var(--text-muted);
   font-size: 1.1rem;
+  color: var(--text-muted);
 }
 
-/* ==============================
+/* ==================================================
+   NAV
+================================================== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 1rem;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+nav a {
+  font-weight: 500;
+}
+
+/* ==================================================
    SECTIONS
-============================== */
+================================================== */
 section {
   max-width: 1100px;
-  margin: 3rem auto;
+  margin: 3.5rem auto;
   padding: 0 1.5rem;
 }
 
 section h2 {
   font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  padding-left: 0.8rem;
+  margin-bottom: 1.6rem;
+  padding-left: 0.9rem;
   border-left: 4px solid var(--accent);
+  font-weight: 600;
 }
 
-/* ==============================
+/* ==================================================
    CARD
-============================== */
+================================================== */
 .card {
   background-color: var(--bg-card);
-  padding: 1.8rem;
+  padding: 2rem;
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* ==============================
-   SOBRE
-============================== */
-#sobre p {
+/* ==================================================
+   SOBRE / HISTÓRIA
+================================================== */
+#sobre p,
+#historia p {
   margin-bottom: 1rem;
   color: var(--text-muted);
   text-align: justify;
 }
 
-/* ==============================
+/* ==================================================
    PROJETOS
-============================== */
-#projetos .card h3 {
+================================================== */
+#projetos h3 {
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
-#projetos .card p {
+#projetos p {
   color: var(--text-muted);
 }
 
-/* ==============================
-   HABILIDADES
-============================== */
-#habilidades ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-bottom: 1rem;
+/* ==================================================
+   SERVIÇOS
+================================================== */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
 }
 
-#habilidades li {
+.servico {
   background-color: var(--bg-soft);
   border: 1px solid var(--border-soft);
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ==============================
+.servico:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+/* ==================================================
    CONTATO
-============================== */
+================================================== */
 .contato-container {
   display: grid;
   gap: 2rem;
@@ -141,35 +166,35 @@ section h2 {
   text-align: center;
 }
 
-/* BOTÃO */
 .btn-contato {
   display: inline-block;
   background-color: var(--accent);
   color: #020617;
-  padding: 0.9rem 2rem;
+  padding: 0.9rem 2.2rem;
   border-radius: 10px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .btn-contato:hover {
   background-color: var(--accent-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
-/* INFO E REDES */
+/* INFO */
 .contato-info p,
 .contato-redes p {
-  margin-bottom: 0.6rem;
   color: var(--text-muted);
+  margin-bottom: 0.6rem;
 }
 
-/* ==============================
+/* ==================================================
    FOOTER
-============================== */
+================================================== */
 footer {
   margin-top: 4rem;
-  padding: 1.5rem;
+  padding: 1.6rem;
   text-align: center;
   background-color: var(--bg-card);
   border-top: 1px solid var(--border-soft);
@@ -180,15 +205,20 @@ footer p {
   color: var(--text-muted);
 }
 
-/* ==============================
+/* ==================================================
    RESPONSIVO
-============================== */
+================================================== */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   section h2 {
     font-size: 1.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
